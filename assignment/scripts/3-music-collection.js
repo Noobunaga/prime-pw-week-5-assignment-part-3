@@ -22,9 +22,21 @@ console.log(collection);
 function showCollection(array){
   console.log(collection.length);
   for (let i = 0; i < collection.length; i++) {
+      console.log(collection[i].title, 'by', collection[i].artist, collection[i].yearPublished);
+  }
+}
+
+showCollection(collection);
+
+function findByArtist(artist){
+  let searchResults =[];
+  for (let i = 0; i < collection.length; i++){
     if ( artist === collection[i].artist){
       searchResults.push(collection[i]);
     }
   }
   return searchResults;
 }
+
+console.log(findByArtist('The Fray'));
+console.log(findByArtist('Bruno Mars'));
