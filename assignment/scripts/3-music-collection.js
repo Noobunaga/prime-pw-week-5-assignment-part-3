@@ -3,10 +3,9 @@ console.log('***** Music Collection *****')
 const collection = [];
 
 function addToCollection(title, artist, yearPublished) {
-  const album = {album:title, artist, yearPublished}
-  collection.push(title, artist, yearPublished);
-  console.log(` ${title} was added to collection`);
-  return collection
+  const album = {title:title, artist:artist, yearPublished:yearPublished}
+  collection.push(album);
+  return album
 }
 
 addToCollection ('Meteora', 'Linkin Park', '2003')
@@ -20,6 +19,12 @@ addToCollection ('Spider-Man:Into the Spider-verse OST','Various Artist','2018')
 
 console.log(collection);
 
-function showCollection(){
-  
+function showCollection(array){
+  console.log(collection.length);
+  for (let i = 0; i < collection.length; i++) {
+    if ( artist === collection[i].artist){
+      searchResults.push(collection[i]);
+    }
+  }
+  return searchResults;
 }
